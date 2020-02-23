@@ -1,0 +1,5 @@
+description = "Spring Czy"
+
+dependencies {
+    compile(project(":spring-context"))
+}

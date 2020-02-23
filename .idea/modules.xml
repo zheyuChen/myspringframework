@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-websocket/src/main/main.iml" filepath="$PROJECT_DIR$/spring-websocket/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-oxm/src/main/main1.iml" filepath="$PROJECT_DIR$/spring-oxm/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-jms/src/main/main10.iml" filepath="$PROJECT_DIR$/spring-jms/src/main/main10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-orm/src/main/main11.iml" filepath="$PROJECT_DIR$/spring-orm/src/main/main11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-web/src/main/main12.iml" filepath="$PROJECT_DIR$/spring-web/src/main/main12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-test/src/main/main13.iml" filepath="$PROJECT_DIR$/spring-test/src/main/main13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-core/src/main/main14.iml" filepath="$PROJECT_DIR$/spring-core/src/main/main14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-messaging/src/main/main15.iml" filepath="$PROJECT_DIR$/spring-messaging/src/main/main15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-expression/src/main/main16.iml" filepath="$PROJECT_DIR$/spring-expression/src/main/main16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-context-support/src/main/main17.iml" filepath="$PROJECT_DIR$/spring-context-support/src/main/main17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-aspects/src/main/main18.iml" filepath="$PROJECT_DIR$/spring-aspects/src/main/main18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-jdbc/src/main/main2.iml" filepath="$PROJECT_DIR$/spring-jdbc/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-aop/src/main/main3.iml" filepath="$PROJECT_DIR$/spring-aop/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-context/src/main/main4.iml" filepath="$PROJECT_DIR$/spring-context/src/main/main4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-webflux/src/main/main5.iml" filepath="$PROJECT_DIR$/spring-webflux/src/main/main5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-context-indexer/src/main/main6.iml" filepath="$PROJECT_DIR$/spring-context-indexer/src/main/main6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-tx/src/main/main7.iml" filepath="$PROJECT_DIR$/spring-tx/src/main/main7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-webmvc/src/main/main8.iml" filepath="$PROJECT_DIR$/spring-webmvc/src/main/main8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-beans/src/main/main9.iml" filepath="$PROJECT_DIR$/spring-beans/src/main/main9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-jms/src/test/test.iml" filepath="$PROJECT_DIR$/spring-jms/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-webmvc/src/test/test1.iml" filepath="$PROJECT_DIR$/spring-webmvc/src/test/test1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-webflux/src/test/test10.iml" filepath="$PROJECT_DIR$/spring-webflux/src/test/test10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-aop/src/test/test11.iml" filepath="$PROJECT_DIR$/spring-aop/src/test/test11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-messaging/src/test/test12.iml" filepath="$PROJECT_DIR$/spring-messaging/src/test/test12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-oxm/src/test/test13.iml" filepath="$PROJECT_DIR$/spring-oxm/src/test/test13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-orm/src/test/test14.iml" filepath="$PROJECT_DIR$/spring-orm/src/test/test14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-websocket/src/test/test15.iml" filepath="$PROJECT_DIR$/spring-websocket/src/test/test15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-jdbc/src/test/test16.iml" filepath="$PROJECT_DIR$/spring-jdbc/src/test/test16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-context-indexer/src/test/test17.iml" filepath="$PROJECT_DIR$/spring-context-indexer/src/test/test17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-tx/src/test/test18.iml" filepath="$PROJECT_DIR$/spring-tx/src/test/test18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-core/src/test/test2.iml" filepath="$PROJECT_DIR$/spring-core/src/test/test2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-expression/src/test/test3.iml" filepath="$PROJECT_DIR$/spring-expression/src/test/test3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-aspects/src/test/test4.iml" filepath="$PROJECT_DIR$/spring-aspects/src/test/test4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-context/src/test/test5.iml" filepath="$PROJECT_DIR$/spring-context/src/test/test5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-beans/src/test/test6.iml" filepath="$PROJECT_DIR$/spring-beans/src/test/test6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-test/src/test/test7.iml" filepath="$PROJECT_DIR$/spring-test/src/test/test7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-web/src/test/test8.iml" filepath="$PROJECT_DIR$/spring-web/src/test/test8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-context-support/src/test/test9.iml" filepath="$PROJECT_DIR$/spring-context-support/src/test/test9.iml" />
+    </modules>
+  </component>
+</project>
