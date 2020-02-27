@@ -2,4 +2,7 @@ description = "Spring Czy"
 
 dependencies {
     compile(project(":spring-context"))
+    compile(project(":spring-aop"))
+    compile("org.aspectj:aspectjrt:1.8.5")
+    compile("org.aspectj:aspectjweaver:1.8.5")
 }
