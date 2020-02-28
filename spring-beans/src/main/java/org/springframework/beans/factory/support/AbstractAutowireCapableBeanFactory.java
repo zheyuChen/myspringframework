@@ -554,6 +554,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 			instanceWrapper = this.factoryBeanInstanceCache.remove(beanName);
 		}
 		if (instanceWrapper == null) {
+			/* 实例化对象（new），里面第二次调用后置处理器 */
 			instanceWrapper = createBeanInstance(beanName, mbd, args);
 		}
 		final Object bean = instanceWrapper.getWrappedInstance();
@@ -591,7 +592,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		// Initialize the bean instance.
 		Object exposedObject = bean;
 		try {
+			/* 填充属性，也就是我们常说的自动注入，里面会完成第五次和第六次后置处理器的调用 */
 			populateBean(beanName, mbd, instanceWrapper);
+			/* 初始化spring，里面会进行第七次和第八次后置处理器的调用 */
 			exposedObject = initializeBean(beanName, exposedObject, mbd);
 		}
 		catch (Throwable ex) {
@@ -1785,10 +1788,15 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
 		Object wrappedBean = bean;
 		if (mbd == null || !mbd.isSynthetic()) {
+			/* 执行spring当中的内置处理器 @PostConstruct
+			*  生命周期初始化回调方法有三种：1.@PostConstruct,也是先执行的 2.实现InitializingBean接口，重写里面的afterPropertiesSet方法
+			*  3.xml配置<bean init-method="initaa">
+			* */
 			wrappedBean = applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);
 		}
 
 		try {
+			/* 执行InitializingBean 初始化 */
 			invokeInitMethods(beanName, wrappedBean, mbd);
 		}
 		catch (Throwable ex) {
@@ -1797,6 +1805,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 					beanName, "Invocation of init method failed", ex);
 		}
 		if (mbd == null || !mbd.isSynthetic()) {
+			/* 初始化后，执行后置处理器，完成spring aop */
 			wrappedBean = applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);
 		}
 
