@@ -84,7 +84,9 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * {@link Configuration @Configuration} classes
 	 */
 	public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
+		/* 在自己的构造方法中初始一个读取器和扫描器，并且继承父类无参构造方法实例化一个beanFactory(DefaultListableBeanFactory) */
 		this();
+		/* 把componentClasses放到beandeFinitionMap */
 		register(componentClasses);
 		refresh();
 	}

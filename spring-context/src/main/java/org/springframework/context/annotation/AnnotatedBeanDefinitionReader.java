@@ -250,17 +250,33 @@ public class AnnotatedBeanDefinitionReader {
 			@Nullable Class<? extends Annotation>[] qualifiers, @Nullable Supplier<T> supplier,
 			@Nullable BeanDefinitionCustomizer[] customizers) {
 
+		/* 根据指定的bean创建一个AnnotatedGenericBeanDefinition 这个AnnotatedGenericBeanDefinition可以理解为一个数据结构
+		* AnnotatedGenericBeanDefinition包含了类的其他信息，比如一些元信息 scope lazy等等 */
 		AnnotatedGenericBeanDefinition abd = new AnnotatedGenericBeanDefinition(beanClass);
+
+		/* 判断这个类是否需要跳过解析，通过代码可以知道spring判断是否跳过解析，主要判断类有没有加注解 */
 		if (this.conditionEvaluator.shouldSkip(abd.getMetadata())) {
 			return;
 		}
 
 		abd.setInstanceSupplier(supplier);
+
+		/* 得到类的作用域 */
 		ScopeMetadata scopeMetadata = this.scopeMetadataResolver.resolveScopeMetadata(abd);
+
+		/* 把类的作用域添加到上述的数据结构中 */
 		abd.setScope(scopeMetadata.getScopeName());
+
+		/* 生成类的名字通过beanNameGenerator */
 		String beanName = (name != null ? name : this.beanNameGenerator.generateBeanName(abd, this.registry));
 
+		/* 处理类当中的通用注解 分析源码可以知道主要处理Lazy DependsOn Primary Role等注解，处理完成后依然把它添加到上述的数据结构abd中 */
 		AnnotationConfigUtils.processCommonDefinitionAnnotations(abd);
+
+		/* 如果在向容器中注册注解Bean定义时，使用了额外的限定符注解则解析
+		* 关于Qualifier和Primary主要涉及到spring的自动装配
+		* 注意这个qualifiers变量是Annotation类型的数组，里面不仅仅是Qualifier，理论上里面存的是一切注解，所以看到下面循环这个数组
+		* 然后依次判断了注解当中是否包含了Primary, 是否包含了Lazy */
 		if (qualifiers != null) {
 			for (Class<? extends Annotation> qualifier : qualifiers) {
 				if (Primary.class == qualifier) {
@@ -280,8 +296,15 @@ public class AnnotatedBeanDefinitionReader {
 			}
 		}
 
+		/* 这个BeanDefinitionHolder也是个数据结构 */
 		BeanDefinitionHolder definitionHolder = new BeanDefinitionHolder(abd, beanName);
+
+		/* ScopedProxyMode比较复杂需要结合web去理解 */
 		definitionHolder = AnnotationConfigUtils.applyScopedProxyMode(scopeMetadata, definitionHolder, this.registry);
+
+		/* 把上述的数据结构注册给registry，registry就是AnnotationConfigApplicationContext
+		* AnnotationConfigApplicationContext在初始化的时候通过调用父类的构造方法实例化一个DefaultListableBeanFactory
+		* registerBeanDefinition方法里面就是把definitionHolder这个数据结构包含的信息set到DefaultListableBeanFactory这个工厂 */
 		BeanDefinitionReaderUtils.registerBeanDefinition(definitionHolder, this.registry);
 	}
 

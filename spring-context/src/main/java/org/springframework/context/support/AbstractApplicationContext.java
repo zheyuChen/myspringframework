@@ -516,12 +516,15 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	public void refresh() throws BeansException, IllegalStateException {
 		synchronized (this.startupShutdownMonitor) {
 			// Prepare this context for refreshing.
+			/* 准备工作包括设置启动时间，是否激活标识位，初始化属性源(property source)配置 */
 			prepareRefresh();
 
 			// Tell the subclass to refresh the internal bean factory.
+			/* 返回一个工厂，为了后续对工厂进行初始化 */
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
 			// Prepare the bean factory for use in this context.
+			/* 准备工厂 */
 			prepareBeanFactory(beanFactory);
 
 			try {
@@ -529,16 +532,20 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 				postProcessBeanFactory(beanFactory);
 
 				// Invoke factory processors registered as beans in the context.
-				/* 完成了所谓的类扫描和parse（类----beanDefinition） */
+				/* 在spring环境中去执行已经被注册的factory processors，设置执行自定义的processBeanFactory和spring内部自己定义的
+				* 完成了所谓的类扫描和parse（类----beanDefinition），处理了各种import importresource mapperscan等注解
+				* */
 				invokeBeanFactoryPostProcessors(beanFactory);
 
 				// Register bean processors that intercept bean creation.
+				/* 注册BeanPostProcessor */
 				registerBeanPostProcessors(beanFactory);
 
 				// Initialize message source for this context.
 				initMessageSource();
 
 				// Initialize event multicaster for this context.
+				/* 初始化应用事件广播器 */
 				initApplicationEventMulticaster();
 
 				// Initialize other special beans in specific context subclasses.
@@ -704,6 +711,10 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 * <p>Must be called before singleton instantiation.
 	 */
 	protected void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory) {
+		/* 需要注意getBeanFactoryPostProcessors()是获取手动给spring的BeanFactoryPostProcessor
+		* 自定义并不仅仅是程序员自己写的，自己写的可以加@component也可以不加，如果加了getBeanFactoryPostProcessors()这个地方获取不到，是spring自己扫描的
+		* 为啥得不到，getBeanFactoryPostProcessors()这个方法是直接获取一个list，这个list是在AnnotationConfigApplicationContext被定义
+		* 所谓的自定义的就是你手动调用AnnotationConfigApplicationContext.addBeanFactoryPostProcessor() */
 		PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(beanFactory, getBeanFactoryPostProcessors());
 
 		// Detect a LoadTimeWeaver and prepare for weaving, if found in the meantime
