@@ -242,10 +242,21 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	protected <T> T doGetBean(final String name, @Nullable final Class<T> requiredType,
 			@Nullable final Object[] args, boolean typeCheckOnly) throws BeansException {
 
+		/* 通过name获取beanName。这里不使用name直接作为beanName有两个原因
+		* 1.name可能以&字符开头，表明调用者想获取factoryBean本身，而非factoryBean实现类所创建的bean。在beanfoctory中，factoryBean
+		* 的实现类和其他的bean存储方式是一致的，即<beanName,bean>，beanName中是没有&这个字符的。所以我们需要将name的首字符&移除，
+		* 这样才能从缓存里取到factoryBean实例
+		* 2，还是别名的问题，转换需要 */
 		final String beanName = transformedBeanName(name);
 		Object bean;
 
 		// Eagerly check singleton cache for manually registered singletons.
+		/* 这个方法在初始化的时候会调用，在getBean的时候也会调用，为什么需要这么做呢？
+		* 也就是说spring在初始化的时候先获取这个对象，判断这个对象是否被实例化好了（普通情况下绝对为空====有一种情况可能不为空）
+		* 从spring的bean容器中获取一个bean，由于spring中bean容器是一个map（singletonObjects），所以你可以理解
+		* getSingleton(beanName)等于beanMap.get(beanName)，所以方法会在spring环境初始化的时候（就是对象被创建的时候）调用一次
+		* 还会在getBean的时候调用一次，所以在调试的时候需要特别注意，不能直接断点在这里，需要先进入到AnnotationConfigApplicationContext.getBean(X.class)
+		* 之后再来断点，这样就确保了我们是在获取这bean的时候调用的 */
 		Object sharedInstance = getSingleton(beanName);
 		if (sharedInstance != null && args == null) {
 			if (logger.isTraceEnabled()) {
@@ -257,12 +268,17 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 					logger.trace("Returning cached instance of singleton bean '" + beanName + "'");
 				}
 			}
+
+			/* 如果sharedInstance是普通的单例bean，下面的方法会直接返回。但如果sharedInstance是factoryBean类型的，则需要
+			* 调用getObject工厂方法获取真正的bean实例，如果用户想获取factoryBean本身，这里也不会做特别的处理，直接返回即可
+			* 毕竟factoryBean的实现本身也是一种bean，只不过具有一点特殊的功能而已 */
 			bean = getObjectForBeanInstance(sharedInstance, name, beanName, null);
 		}
 
 		else {
 			// Fail if we're already creating this bean instance:
 			// We're assumably within a circular reference.
+			/* 如果是原型，则不应该在初始化时创建 */
 			if (isPrototypeCurrentlyInCreation(beanName)) {
 				throw new BeanCurrentlyInCreationException(beanName);
 			}
@@ -290,6 +306,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 			}
 
 			if (!typeCheckOnly) {
+				/* 添加到alreadyCreated set集合当中，表示它已经创建过一场 */
 				markBeanAsCreated(beanName);
 			}
 
