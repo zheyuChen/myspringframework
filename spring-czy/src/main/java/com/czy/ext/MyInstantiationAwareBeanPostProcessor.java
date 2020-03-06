@@ -9,6 +9,6 @@ import org.springframework.stereotype.Component;
 public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
-        return false;
+        return true;
     }
 }

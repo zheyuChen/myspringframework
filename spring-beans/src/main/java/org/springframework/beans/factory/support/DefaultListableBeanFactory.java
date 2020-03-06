@@ -413,6 +413,9 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 
 	@Nullable
 	private <T> T resolveBean(ResolvableType requiredType, @Nullable Object[] args, boolean nonUniqueAsNull) {
+		/* NamedBeanHolder可以理解为一个数据结构和map差不多，里面存了bean的名字和bean的实例，
+		* 一个简单的bean和名字的容器， resolveNamedBean返回了代理对象---直接返回的代理对象---完成目标对象到代理对象，返回代理
+		* 通过resolveNamedBean方法得到这个holder，所以需要进入看这个方法如何得到这个holder的 */
 		NamedBeanHolder<T> namedBean = resolveNamedBean(requiredType, args, nonUniqueAsNull);
 		if (namedBean != null) {
 			return namedBean.getBeanInstance();
