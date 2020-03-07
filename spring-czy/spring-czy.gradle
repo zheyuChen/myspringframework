@@ -3,6 +3,11 @@ description = "Spring Czy"
 dependencies {
     compile(project(":spring-context"))
     compile(project(":spring-aop"))
+    compile(project(":spring-web"))
+    compile(project(":spring-webmvc"))
     compile("org.aspectj:aspectjrt:1.8.5")
     compile("org.aspectj:aspectjweaver:1.8.5")
+    compile("org.apache.tomcat.embed:tomcat-embed-core:8.5.33")
+    compile("com.alibaba:fastjson:1.2.30")
+    optional("javax.servlet:javax.servlet-api:3.1.0")
 }
