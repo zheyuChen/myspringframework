@@ -1,6 +1,9 @@
 package com.czy.app;
 
-import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import java.util.List;
+
+import javax.sql.DataSource;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -12,14 +15,14 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import javax.sql.DataSource;
-import java.util.List;
+import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 
 @ComponentScan("com.czy")
 @EnableAspectJAutoProxy()
-//@EnableWebMvc  测试web时加上
+// 测试web时加上
+@EnableWebMvc
 @MapperScan("com.czy.mapper")
-//@MyScan("com.czy.mapper")  测试模拟mybatis时用
+// @MyScan("com.czy.mapper") 测试模拟mybatis时用
 public class AppConfig implements WebMvcConfigurer {
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
