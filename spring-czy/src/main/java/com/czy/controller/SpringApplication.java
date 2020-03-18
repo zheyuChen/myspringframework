@@ -9,13 +9,13 @@ import org.apache.catalina.startup.Tomcat;
 public class SpringApplication {
     public static void run() {
         Tomcat tom = new Tomcat();
-        tom.setPort(8989);
+        tom.setPort(8080);
 
         try {
             /* 来判断执行web项目，等价于将项目放到tomcat的webapp目录下 */
             tom.addWebapp("/", "D:\\Download");
 
-            //tom.addContext("/", "D:\\Download");
+            // tom.addContext("/", "D:\\Download");
             tom.start();
             tom.getServer().await();
         } catch (LifecycleException e) {
