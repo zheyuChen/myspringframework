@@ -13,7 +13,7 @@ public class SpringApplication {
 
         try {
             /* 来判断执行web项目，等价于将项目放到tomcat的webapp目录下 */
-            tom.addWebapp("/", "D:\\Download");
+            tom.addWebapp("/", "D:\\QMDownload");
 
             // tom.addContext("/", "D:\\Download");
             tom.start();

@@ -81,6 +81,8 @@ public class HiddenHttpMethodFilter extends OncePerRequestFilter {
 
 		HttpServletRequest requestToUse = request;
 
+		/* 目前浏览器只有get和post两种方式发送请求，此方法就是通过在post方式提交的表单中携带隐藏域来把post请求转化为put或delete请求
+		* 隐藏域中的参数为_method，<input type="hidden" name="_method" value="put"/> */
 		if ("POST".equals(request.getMethod()) && request.getAttribute(WebUtils.ERROR_EXCEPTION_ATTRIBUTE) == null) {
 			String paramValue = request.getParameter(this.methodParam);
 			if (StringUtils.hasLength(paramValue)) {
