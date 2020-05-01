@@ -741,6 +741,7 @@ public class DataBinder implements PropertyEditorRegistry, TypeConverter {
 	protected void doBind(MutablePropertyValues mpvs) {
 		checkAllowedFields(mpvs);
 		checkRequiredFields(mpvs);
+		/* 将用户传入的新属性值更新到本地获取的对象中 */
 		applyPropertyValues(mpvs);
 	}
 

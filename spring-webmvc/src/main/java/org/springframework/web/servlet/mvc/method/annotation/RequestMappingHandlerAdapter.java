@@ -859,6 +859,7 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 
 			ModelAndViewContainer mavContainer = new ModelAndViewContainer();
 			mavContainer.addAllAttributes(RequestContextUtils.getInputFlashMap(request));
+			/* 把数据绑定到mavContainer容器中 */
 			modelFactory.initModel(webRequest, mavContainer, invocableMethod);
 			mavContainer.setIgnoreDefaultModelOnRedirect(this.ignoreDefaultModelOnRedirect);
 

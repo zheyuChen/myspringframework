@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87869209-dc75-4010-bd9c-e7f92520e58b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/spring-czy/src/main/resources/static/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-czy/src/main/resources/thymeleaf/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-czy/src/main/resources/thymeleaf/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/app/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/app/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-context/src/main/java/org/springframework/validation/DataBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/main/java/org/springframework/validation/DataBinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-czy/build/classes/java/main/com/czy/app/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/build/classes/java/main/com/czy/app/AppConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-czy/build/classes/java/main/com/czy/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/build/classes/java/main/com/czy/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/controller/ThymeleafController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/controller/ThymeleafController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-czy/src/main/resources/static/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/src/main/resources/static/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-web/src/main/java/org/springframework/web/method/annotation/ModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-web/src/main/java/org/springframework/web/method/annotation/ModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +86,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-czy/src/main/resources/thymeleaf" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ideaspace\myspringframework\spring-czy\src\main\resources\thymeleaf" />
+      <recent name="E:\ideaspace\myspringframework\spring-czy\src\main\resources\static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ideaspace\myspringframework\spring-czy\src\main\resources\thymeleaf" />
+    </key>
   </component>
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
@@ -190,12 +217,25 @@
       <workItem from="1587729973967" duration="1434000" />
       <workItem from="1587790308694" duration="2561000" />
       <workItem from="1587901966509" duration="2601000" />
-      <workItem from="1588300020999" duration="3945000" />
+      <workItem from="1588300020999" duration="5988000" />
+      <workItem from="1588340352498" duration="10033000" />
     </task>
+    <task id="LOCAL-00001" summary="增加配置访问公共目录下的资源文件">
+      <created>1588305430102</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588305430102</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="增加配置访问公共目录下的资源文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加配置访问公共目录下的资源文件" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588300328226">
@@ -203,10 +243,14 @@
     </state>
     <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1582463387118" />
     <state x="232" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588300328226" />
-    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1588303679170">
+    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1588340872034">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588303679170" />
+    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588340872034" />
+    <state x="528" y="307" width="808" height="594" key="#xdebugger.evaluate" timestamp="1588350319954">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="528" y="307" width="808" height="594" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1588350319954" />
     <state x="452" y="113" key="CommitChangelistDialog2" timestamp="1588305400633">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -216,56 +260,64 @@
     </state>
     <state x="500" y="187" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1582460543326" />
     <state x="667" y="226" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587655689652" />
-    <state width="1920" height="284" key="GridCell.Tab.0.bottom" timestamp="1588305328473">
+    <state width="1920" height="367" key="GridCell.Tab.0.bottom" timestamp="1588350488699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1440" height="225" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1582463347229" />
-    <state width="1920" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588305328473" />
-    <state width="1920" height="284" key="GridCell.Tab.0.center" timestamp="1588305328473">
+    <state width="1920" height="367" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588350488699" />
+    <state width="1920" height="367" key="GridCell.Tab.0.center" timestamp="1588350488699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1440" height="225" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1582463347229" />
-    <state width="1920" height="284" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588305328473" />
-    <state width="1920" height="284" key="GridCell.Tab.0.left" timestamp="1588305328473">
+    <state width="1920" height="367" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588350488699" />
+    <state width="1920" height="367" key="GridCell.Tab.0.left" timestamp="1588350488699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1440" height="225" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1582463347229" />
-    <state width="1920" height="284" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588305328473" />
-    <state width="1920" height="284" key="GridCell.Tab.0.right" timestamp="1588305328473">
+    <state width="1920" height="367" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588350488699" />
+    <state width="1920" height="367" key="GridCell.Tab.0.right" timestamp="1588350488699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1440" height="225" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1582463347229" />
-    <state width="1920" height="284" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588305328473" />
-    <state width="1920" height="351" key="GridCell.Tab.1.bottom" timestamp="1587657193969">
+    <state width="1920" height="367" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588350488699" />
+    <state width="1920" height="367" key="GridCell.Tab.1.bottom" timestamp="1588350488699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="351" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587657193969" />
-    <state width="1920" height="351" key="GridCell.Tab.1.center" timestamp="1587657193969">
+    <state width="1920" height="367" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588350488699" />
+    <state width="1920" height="367" key="GridCell.Tab.1.center" timestamp="1588350488699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="351" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587657193969" />
-    <state width="1920" height="351" key="GridCell.Tab.1.left" timestamp="1587657193969">
+    <state width="1920" height="367" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588350488699" />
+    <state width="1920" height="367" key="GridCell.Tab.1.left" timestamp="1588350488699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="351" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587657193969" />
-    <state width="1920" height="351" key="GridCell.Tab.1.right" timestamp="1587657193969">
+    <state width="1920" height="367" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588350488699" />
+    <state width="1920" height="367" key="GridCell.Tab.1.right" timestamp="1588350488699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="351" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587657193969" />
+    <state width="1920" height="367" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588350488699" />
     <state x="710" y="232" key="RollbackChangesDialog" timestamp="1586527339798">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="232" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586527339798" />
-    <state x="514" y="112" key="SettingsEditor" timestamp="1588300316351">
+    <state x="514" y="112" key="SettingsEditor" timestamp="1588343681602">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="223" y="61" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1582465453134" />
-    <state x="514" y="112" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588300316351" />
-    <state x="416" y="200" key="Vcs.Push.Dialog.v2" timestamp="1587657358986">
+    <state x="514" y="112" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588343681602" />
+    <state x="681" y="250" width="567" height="524" key="StructurePopup" timestamp="1588350108046">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="681" y="250" width="567" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1588350108046" />
+    <state x="416" y="200" key="Vcs.Push.Dialog.v2" timestamp="1588305432283">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="312" y="165" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1582465837623" />
-    <state x="416" y="200" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587657358986" />
+    <state x="416" y="200" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588305432283" />
+    <state x="408" y="460" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588350504239">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="408" y="460" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1588350504239" />
     <state x="647" y="275" width="766" height="490" key="find.popup" timestamp="1588304215678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -274,10 +326,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="396" y="231" key="git4idea.merge.GitPullDialog/0.0.1440.860@0.0.1440.860" timestamp="1582465789830" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588303618974">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588350222054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588303618974" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588350222054" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -286,6 +338,21 @@
           <url>file://$PROJECT_DIR$/spring-web/src/main/java/org/springframework/web/filter/HiddenHttpMethodFilter.java</url>
           <line>86</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java</url>
+          <line>885</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-web/src/main/java/org/springframework/web/method/support/InvocableHandlerMethod.java</url>
+          <line>160</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-core/src/main/java/org/springframework/core/Conventions.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

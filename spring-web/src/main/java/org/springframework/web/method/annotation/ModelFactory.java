@@ -102,7 +102,9 @@ public final class ModelFactory {
         throws Exception {
 
         Map<String, ?> sessionAttributes = this.sessionAttributesHandler.retrieveAttributes(request);
+        /* 处理有@SessionAttributes注解的类，绑定数据，其实是把数据放到ModelAndViewContainer的defaultModel里 */
         container.mergeAttributes(sessionAttributes);
+        /* 处理有@ModelAttribute的方法，绑定数据，其实是把数据放到ModelAndViewContainer的defaultModel里 */
         invokeModelAttributeMethods(request, container);
 
         for (String name : findSessionAttributeArguments(handlerMethod)) {
