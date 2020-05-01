@@ -17,6 +17,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
@@ -32,6 +33,14 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 @MapperScan("com.czy.mapper")
 // @MyScan("com.czy.mapper") 测试模拟mybatis时用
 public class AppConfig implements WebMvcConfigurer {
+    /* 参考webmvc.adoc里配置说明，允许访问公共目录下的资源文件，不要经过controller转发 */
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
+                .addResourceLocations("/public", "classpath:/static/")
+                .setCachePeriod(31556926);
+    }
+
     /* ----------------配置fastjson解析器--------------- */
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
