@@ -8,23 +8,29 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.thymeleaf.spring5.ISpringTemplateEngine;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.czy.i18n.MyLocaleResolver;
 
 @ComponentScan("com.czy")
 @EnableAspectJAutoProxy()
@@ -33,13 +39,29 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 @MapperScan("com.czy.mapper")
 // @MyScan("com.czy.mapper") 测试模拟mybatis时用
 public class AppConfig implements WebMvcConfigurer {
-    /* 参考webmvc.adoc里配置说明，允许访问公共目录下的资源文件，不要经过controller转发 */
+    /* ---参考webmvc.adoc里配置说明，允许访问公共目录下的资源文件，不要经过controller转发---- */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**")
-                .addResourceLocations("/public", "classpath:/static/")
-                .setCachePeriod(31556926);
+        registry.addResourceHandler("/**").addResourceLocations("/public", "classpath:/static/")
+            .setCachePeriod(31556926);
     }
+    /* ------------------------------------------------ */
+
+    /* ----------------配置国际化解析------------------- */
+    @Bean
+    public LocaleResolver localeResolver() {
+        return new MyLocaleResolver();
+    }
+
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("i18n.login");
+        messageSource.setDefaultEncoding("UTF-8");
+        messageSource.setFallbackToSystemLocale(true);
+        return messageSource;
+    }
+    /* ----------------------------------------------- */
 
     /* ----------------配置fastjson解析器--------------- */
     @Override
@@ -58,6 +80,12 @@ public class AppConfig implements WebMvcConfigurer {
     /* -----------------------配置thymeleaf视图解析器-------------------- */
     @Autowired
     WebApplicationContext webApplicationContext;
+
+    @Autowired
+    ITemplateResolver templateResolver;
+
+    @Autowired
+    ISpringTemplateEngine springTemplateEngine;
 
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
@@ -80,7 +108,7 @@ public class AppConfig implements WebMvcConfigurer {
         // SpringTemplateEngine automatically applies SpringStandardDialect and
         // enables Spring's own MessageSource message resolution mechanisms.
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.setTemplateResolver(templateResolver());
+        templateEngine.setTemplateResolver(templateResolver);
         // Enabling the SpringEL compiler with Spring 4.2.4 or newer can
         // speed up execution in most scenarios, but might be incompatible
         // with specific cases when expressions in one template are reused
@@ -94,7 +122,7 @@ public class AppConfig implements WebMvcConfigurer {
     public ThymeleafViewResolver viewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setContentType("text/html; charset=utf-8");
-        viewResolver.setTemplateEngine(templateEngine());
+        viewResolver.setTemplateEngine(springTemplateEngine);
         return viewResolver;
     }
     /* ------------------------------------------------------------------ */
