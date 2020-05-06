@@ -22,6 +22,7 @@ import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.thymeleaf.spring5.ISpringTemplateEngine;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
@@ -39,6 +40,16 @@ import com.czy.i18n.MyLocaleResolver;
 @MapperScan("com.czy.mapper")
 // @MyScan("com.czy.mapper") 测试模拟mybatis时用
 public class AppConfig implements WebMvcConfigurer {
+
+    /* ----------------增加自定义视图解析器，查找容器中的beanName进行解析-------------- */
+    @Bean
+    public BeanNameViewResolver beanNameViewResolver() {
+        BeanNameViewResolver beanNameViewResolver = new BeanNameViewResolver();
+        beanNameViewResolver.setOrder(100);
+        return beanNameViewResolver;
+    }
+    /* ---------------------------------------------------------------------------- */
+
     /* ---参考webmvc.adoc里配置说明，允许访问公共目录下的资源文件，不要经过controller转发---- */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

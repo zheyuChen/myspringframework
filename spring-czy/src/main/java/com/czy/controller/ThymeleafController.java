@@ -19,6 +19,11 @@ public class ThymeleafController {
         return "hello";
     }
 
+    @RequestMapping("/helloView")
+    public String helloView() {
+        return "helloView";
+    }
+
     @RequestMapping("/success")
     public String success() {
         return "success";
