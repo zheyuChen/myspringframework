@@ -7,14 +7,6 @@ public class Person {
     private String age;
     private String email;
 
-    public Person(Integer id, String name, String password, String age, String email) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.age = age;
-        this.email = email;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -57,12 +49,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", age='" + age + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Person{" + "id=" + id + ", name='" + name + '\'' + ", password='" + password + '\'' + ", age='" + age
+            + '\'' + ", email='" + email + '\'' + '}';
     }
 }

@@ -19,5 +19,15 @@
     Person: <input type="text" name="person">
     <input type="submit" value="submit"/>
 </form>
+<br>
+<br>
+<form th:action="@{/person}" method="post">
+    id: <input type="text" name="id" value="1">
+    name: <input type="text" name="name" value="Tom"/><br>
+    password: <input type="text" name="password" value="123">
+    email: <input type="text" name="email" value="Tom@qq.com"/><br>
+    age: <input type="text" name="age" value="12"/><br>
+    <input type="submit" value="submit"/>
+</form>
 </body>
 </html>

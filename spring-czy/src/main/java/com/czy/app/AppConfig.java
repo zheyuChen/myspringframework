@@ -1,12 +1,9 @@
 package com.czy.app;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 
 import javax.sql.DataSource;
 
-import com.czy.converter.MyConversionServiceConverter;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -15,12 +12,8 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.support.ConversionServiceFactoryBean;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.core.convert.ConversionService;
-import org.springframework.core.convert.converter.ConverterRegistry;
-import org.springframework.core.convert.support.ConversionServiceFactory;
-import org.springframework.core.convert.support.GenericConversionService;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.context.WebApplicationContext;
@@ -39,6 +32,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.czy.converter.MyConversionServiceConverter;
 import com.czy.i18n.MyLocaleResolver;
 
 @ComponentScan("com.czy")
@@ -50,13 +44,12 @@ import com.czy.i18n.MyLocaleResolver;
 public class AppConfig implements WebMvcConfigurer {
 
     /* ----------------增加自定义类型转化器-------------- */
-    @Bean
-    public ConversionServiceFactoryBean conversionServiceFactoryBean() {
-        ConversionServiceFactoryBean conversionServiceFactoryBean = new ConversionServiceFactoryBean();
-        HashSet<Object> converters = new HashSet<>();
-        converters.add(new MyConversionServiceConverter());
-        conversionServiceFactoryBean.setConverters(converters);
-        return conversionServiceFactoryBean;
+    @Autowired
+    MyConversionServiceConverter myConversionServiceConverter;
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(myConversionServiceConverter);
     }
     /* ----------------------------------------------- */
 
