@@ -90,6 +90,15 @@ public class AppConfig implements WebMvcConfigurer {
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(new FastJsonHttpMessageConverter());
+
+        /* 默认的HttpMessageConverter */
+        // converters.add(new StringHttpMessageConverter());
+        // converters.add(new ByteArrayHttpMessageConverter());
+        // converters.add(new ResourceHttpMessageConverter());
+        // converters.add(new SourceHttpMessageConverter<>());
+        // converters.add(new AllEncompassingFormHttpMessageConverter());
+        // converters.add(new Jaxb2RootElementHttpMessageConverter());
+        // converters.add(new MappingJackson2HttpMessageConverter());
     }
     /*-----------------------------------------------*/
 
