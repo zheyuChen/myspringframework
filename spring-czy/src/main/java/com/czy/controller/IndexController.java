@@ -1,13 +1,23 @@
 package com.czy.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import com.czy.model.Person;
 
+import java.util.Date;
+
 @Controller
 public class IndexController {
+    @ResponseBody
+    @RequestMapping(value = "/testHttpMessageConverter", method = RequestMethod.POST)
+    public String testHttpMessageConverter(@RequestBody String body) {
+        System.out.println("body: " + body);
+        return "helloworld!" + new Date();
+    }
 
     @RequestMapping(value = "/testConversionServiceConverter", method = RequestMethod.POST)
     public String testConverter(@RequestParam("person") Person person) {
@@ -22,8 +32,9 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/person", method = RequestMethod.POST)
-    public String addPerson(Person person) {
+    public String addPerson(@Validated Person person, BindingResult result) {
         System.out.println("add person: " + person);
+        System.out.println("occur error: " + result);
         return "success";
     }
 
