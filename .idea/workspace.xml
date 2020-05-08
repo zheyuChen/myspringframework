@@ -2,65 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87869209-dc75-4010-bd9c-e7f92520e58b" name="Default Changelist" comment="增加国际化测试，并修改thymeleaf模板配置">
-      <change afterPath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/i18n/MyLocaleResolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-czy/src/main/resources/i18n/login.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-czy/src/main/resources/i18n/login_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-czy/src/main/resources/i18n/login_zh_CN.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/classes/java/main/org/springframework/validation/DataBinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/classes/java/main/org/springframework/validation/DataBinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/build/libs/spring-context-5.2.3.BUILD-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/build/libs/spring-context-5.2.3.BUILD-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-czy/build/classes/java/main/com/czy/app/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/build/classes/java/main/com/czy/app/AppConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/app/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/app/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/controller/ThymeleafController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/src/main/java/com/czy/controller/ThymeleafController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-czy/src/main/resources/thymeleaf/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/src/main/resources/thymeleaf/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-czy/build/classes/java/main/com/czy/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-czy/build/classes/java/main/com/czy/model/Person.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +48,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -133,7 +88,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.other" />
+    <property name="settings.editor.selected.configurable" value="EclipseFormatter" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -267,7 +222,10 @@
       <workItem from="1588300020999" duration="5988000" />
       <workItem from="1588340352498" duration="10509000" />
       <workItem from="1588481780710" duration="1883000" />
-      <workItem from="1588494015510" duration="15435000" />
+      <workItem from="1588494015510" duration="15620000" />
+      <workItem from="1588768429449" duration="2249000" />
+      <workItem from="1588852796937" duration="11858000" />
+      <workItem from="1588940879687" duration="816000" />
     </task>
     <task id="LOCAL-00001" summary="增加配置访问公共目录下的资源文件">
       <created>1588305430102</created>
@@ -283,7 +241,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588350611230</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="增加国际化测试，并修改thymeleaf模板配置">
+      <created>1588510638682</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588510638682</updated>
+    </task>
+    <task id="LOCAL-00004" summary="增加国际化测试，并修改thymeleaf模板配置">
+      <created>1588868206684</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588868206685</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +264,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="增加配置访问公共目录下的资源文件" />
     <MESSAGE value="增加数据绑定更新测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加数据绑定更新测试" />
+    <MESSAGE value="增加国际化测试，并修改thymeleaf模板配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加国际化测试，并修改thymeleaf模板配置" />
   </component>
   <component name="WindowStateProjectService">
     <state x="354" y="157" key="#Project_Structure" timestamp="1588500102127">
@@ -304,92 +277,96 @@
     </state>
     <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1582463387118" />
     <state x="232" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588500108131" />
-    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1588340872034">
+    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1588863746635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588340872034" />
-    <state x="528" y="307" width="808" height="594" key="#xdebugger.evaluate" timestamp="1588509880314">
+    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588863746635" />
+    <state x="635" y="312" width="808" height="594" key="#xdebugger.evaluate" timestamp="1588867612879">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="528" y="307" width="808" height="594" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1588509880314" />
-    <state x="452" y="113" key="CommitChangelistDialog2" timestamp="1588510585524">
+    <state x="635" y="312" width="808" height="594" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1588867612879" />
+    <state x="452" y="108" key="CommitChangelistDialog2" timestamp="1588868178397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="452" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588510585524" />
-    <state x="667" y="226" key="FileChooserDialogImpl" timestamp="1588493956218">
+    <state x="452" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588868178397" />
+    <state x="667" y="226" key="FileChooserDialogImpl" timestamp="1588858469149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="500" y="187" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1582460543326" />
-    <state x="667" y="226" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588493956218" />
-    <state width="1920" height="367" key="GridCell.Tab.0.bottom" timestamp="1588510546055">
+    <state x="667" y="226" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588858469149" />
+    <state width="1920" height="366" key="GridCell.Tab.0.bottom" timestamp="1588868141249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1440" height="225" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1582463347229" />
-    <state width="1920" height="367" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588510546055" />
-    <state width="1920" height="367" key="GridCell.Tab.0.center" timestamp="1588510546054">
+    <state width="1920" height="366" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588868141249" />
+    <state width="1920" height="366" key="GridCell.Tab.0.center" timestamp="1588868141249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1440" height="225" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1582463347229" />
-    <state width="1920" height="367" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588510546054" />
-    <state width="1920" height="367" key="GridCell.Tab.0.left" timestamp="1588510546054">
+    <state width="1920" height="366" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588868141249" />
+    <state width="1920" height="366" key="GridCell.Tab.0.left" timestamp="1588868141249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1440" height="225" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1582463347229" />
-    <state width="1920" height="367" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588510546054" />
-    <state width="1920" height="367" key="GridCell.Tab.0.right" timestamp="1588510546055">
+    <state width="1920" height="366" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588868141249" />
+    <state width="1920" height="366" key="GridCell.Tab.0.right" timestamp="1588868141249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1440" height="225" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1582463347229" />
-    <state width="1920" height="367" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588510546055" />
-    <state width="1920" height="367" key="GridCell.Tab.1.bottom" timestamp="1588510546055">
+    <state width="1920" height="366" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588868141249" />
+    <state width="1920" height="366" key="GridCell.Tab.1.bottom" timestamp="1588868141249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="367" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588510546055" />
-    <state width="1920" height="367" key="GridCell.Tab.1.center" timestamp="1588510546055">
+    <state width="1920" height="366" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588868141249" />
+    <state width="1920" height="366" key="GridCell.Tab.1.center" timestamp="1588868141249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="367" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588510546055" />
-    <state width="1920" height="367" key="GridCell.Tab.1.left" timestamp="1588510546055">
+    <state width="1920" height="366" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588868141249" />
+    <state width="1920" height="366" key="GridCell.Tab.1.left" timestamp="1588868141249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="367" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588510546055" />
-    <state width="1920" height="367" key="GridCell.Tab.1.right" timestamp="1588510546055">
+    <state width="1920" height="366" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588868141249" />
+    <state width="1920" height="366" key="GridCell.Tab.1.right" timestamp="1588868141249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="367" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588510546055" />
+    <state width="1920" height="366" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588868141249" />
     <state x="710" y="232" key="RollbackChangesDialog" timestamp="1586527339798">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="232" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586527339798" />
-    <state x="514" y="112" width="1064" height="778" key="SettingsEditor" timestamp="1588494168323">
+    <state x="460" y="103" width="1064" height="778" key="SettingsEditor" timestamp="1588858485748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="223" y="61" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1582465453134" />
-    <state x="514" y="112" width="1064" height="778" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588494168323" />
-    <state x="681" y="250" width="567" height="524" key="StructurePopup" timestamp="1588508657260">
+    <state x="460" y="103" width="1064" height="778" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588858485748" />
+    <state x="681" y="250" width="567" height="524" key="StructurePopup" timestamp="1588863419126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="681" y="250" width="567" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1588508657260" />
-    <state x="416" y="200" key="Vcs.Push.Dialog.v2" timestamp="1588350613312">
+    <state x="681" y="250" width="567" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1588863419126" />
+    <state x="416" y="200" key="Vcs.Push.Dialog.v2" timestamp="1588868392838">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="312" y="165" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1582465837623" />
-    <state x="416" y="200" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588350613312" />
-    <state x="373" y="282" width="892" height="645" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588510466372">
+    <state x="416" y="200" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588868392838" />
+    <state x="754" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588945299628">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="373" y="282" width="892" height="645" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1588510466372" />
-    <state x="647" y="275" width="766" height="490" key="find.popup" timestamp="1588304215678">
+    <state x="754" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588945299628" />
+    <state x="496" y="245" width="892" height="645" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588868019555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="647" y="275" width="766" height="490" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588304215678" />
+    <state x="496" y="245" width="892" height="645" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1588868019555" />
+    <state x="647" y="275" width="867" height="490" key="find.popup" timestamp="1588863222904">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="647" y="275" width="867" height="490" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588863222904" />
     <state x="396" y="231" key="git4idea.merge.GitPullDialog" timestamp="1582465789830">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="396" y="231" key="git4idea.merge.GitPullDialog/0.0.1440.860@0.0.1440.860" timestamp="1582465789830" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588508560591">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588864212002">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588508560591" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588864212002" />
   </component>
 </project>
