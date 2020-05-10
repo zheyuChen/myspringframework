@@ -25,6 +25,19 @@ import com.czy.model.Person;
 @Controller
 public class IndexController {
 
+    @RequestMapping("/testSimpleMappingExceptionResolver")
+    public String testSimpleMappingExceptionResolver(@RequestParam("i") int i) {
+        String[] vals = new String[10];
+        System.out.println(vals[i]);
+        return "success";
+    }
+
+    @RequestMapping("/testExceptionHandlerExceptionResolver")
+    public String testExceptionHandlerExceptionResolver(@RequestParam("i") int i) {
+        System.out.println("result: " + (10 / i));
+        return "success";
+    }
+
     @RequestMapping("/testFileUpload")
     public String testFileUpload(@RequestParam("desc") String desc, @RequestParam("file") MultipartFile file)
         throws IOException {

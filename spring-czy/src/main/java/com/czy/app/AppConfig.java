@@ -1,6 +1,7 @@
 package com.czy.app;
 
 import java.util.List;
+import java.util.Properties;
 
 import javax.sql.DataSource;
 
@@ -19,11 +20,13 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
@@ -45,6 +48,29 @@ import com.czy.interceptor.MyHandlerInterceptor;
 @MapperScan("com.czy.mapper")
 // @MyScan("com.czy.mapper") 测试模拟mybatis时用
 public class AppConfig implements WebMvcConfigurer {
+
+    /* ------------------------配置异常处理---------------------- */
+    /* 此方法为空会增加默认异常处理解析器，否则不会添加，和下面的extendHandlerExceptionResolvers都可以配置异常解析处理器，二者可以叠加 */
+    @Override
+    public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
+
+    }
+
+    @Override
+    public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
+
+    }
+
+    /* 配置springmvc其他的异常处理解析器实现 */
+    @Bean
+    public SimpleMappingExceptionResolver simpleMappingExceptionResolver() {
+        SimpleMappingExceptionResolver simpleMappingExceptionResolver = new SimpleMappingExceptionResolver();
+        Properties properties = new Properties();
+        properties.setProperty("java.lang.ArrayIndexOutOfBoundsException", "error");
+        simpleMappingExceptionResolver.setExceptionMappings(properties);
+        return simpleMappingExceptionResolver;
+    }
+    /* -------------------------------------------------------- */
 
     /* ----------------增加自定义类型转化器-------------- */
     @Autowired
