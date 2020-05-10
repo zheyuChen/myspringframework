@@ -21,8 +21,11 @@ import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.thymeleaf.spring5.ISpringTemplateEngine;
 import org.thymeleaf.spring5.SpringTemplateEngine;
@@ -33,7 +36,7 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.czy.converter.MyConversionServiceConverter;
-import com.czy.i18n.MyLocaleResolver;
+import com.czy.interceptor.MyHandlerInterceptor;
 
 @ComponentScan("com.czy")
 @EnableAspectJAutoProxy()
@@ -71,9 +74,25 @@ public class AppConfig implements WebMvcConfigurer {
     /* ------------------------------------------------ */
 
     /* ----------------配置国际化解析------------------- */
+    /* 自己定义的国际化处理 */
+    // @Bean
+    // public LocaleResolver localeResolver() {
+    // return new MyLocaleResolver();
+    // }
+
+    /* 使用springmvc实现的国际化处理，请求中携带locale参数即可，然后设置到请求的session中
+    * 注意使用这个国际化需要增加LocaleChangeInterceptor拦截器 */
     @Bean
     public LocaleResolver localeResolver() {
-        return new MyLocaleResolver();
+        return new SessionLocaleResolver();
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LocaleChangeInterceptor());
+
+        /* 增加自定义拦截器 */
+        registry.addInterceptor(new MyHandlerInterceptor());
     }
 
     @Bean
@@ -86,7 +105,8 @@ public class AppConfig implements WebMvcConfigurer {
     }
     /* ----------------------------------------------- */
 
-    /* ----------------配置fastjson解析器--------------- */
+    /* ----------------配置消息转换器(fastjson)--------------- */
+    /* 如果此方法配置了转换器，就不会添加默认的转换器 */
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(new FastJsonHttpMessageConverter());
@@ -100,7 +120,14 @@ public class AppConfig implements WebMvcConfigurer {
         // converters.add(new Jaxb2RootElementHttpMessageConverter());
         // converters.add(new MappingJackson2HttpMessageConverter());
     }
-    /*-----------------------------------------------*/
+
+    /* 此方法也是可以配置消息转换器，和上述的方法叠加 */
+    @Override
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+
+    }
+
+    /*---------------------------------------------------------- */
 
     /* ---------------配置servlet3.0方式的文件处理解析器----------------- */
     @Bean

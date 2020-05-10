@@ -33,13 +33,21 @@
 </form>
 <br>
 <br>
-<form th:action="@{/testHttpMessageConverter}" method="post" enctype="multipart/form-data">
+<form th:action="@{/testHttpMessageConverter}" method="post">
     File: <input type="file" name="file">
     Desc: <input type="text" name="desc">
     <input type="submit" value="submit"/>
 </form>
 <br>
 <br>
-<a th:href="testResponseEntity">Test ResponseEntity</a>
+<a th:href="@{/testResponseEntity}">Test ResponseEntity</a><br><br>
+<a th:href="@{/i18n(locale=zh_CN)}">Test i18n zh</a><br><br>
+<a th:href="@{/i18n(locale=en_US)}">Test i18n en</a><br><br>
+<form th:action="@{/testFileUpload}" method="post" enctype="multipart/form-data">
+    File: <input type="file" name="file">
+    Desc: <input type="text" name="desc">
+    <input type="submit" value="submit"/>
+</form>
+<br><br>
 </body>
 </html>

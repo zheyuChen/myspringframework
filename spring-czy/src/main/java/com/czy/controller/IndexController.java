@@ -3,10 +3,13 @@ package com.czy.controller;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
+import java.util.Locale;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +18,32 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.czy.model.Person;
 
 @Controller
 public class IndexController {
+
+    @RequestMapping("/testFileUpload")
+    public String testFileUpload(@RequestParam("desc") String desc, @RequestParam("file") MultipartFile file)
+        throws IOException {
+        System.out.println("desc: " + desc);
+        System.out.println("originalFileName: " + file.getOriginalFilename());
+        System.out.println("inputSteam: " + file.getInputStream());
+        return "success";
+    }
+
+    /* 测试国际化 */
+    @Autowired
+    private ResourceBundleMessageSource messageSource;
+
+    @RequestMapping("/i18n")
+    public String testI18n(Locale locale) {
+        String v = messageSource.getMessage("login.username", null, locale);
+        System.out.println(v);
+        return "success";
+    }
 
     @RequestMapping("/testResponseEntity")
     public ResponseEntity<byte[]> testResponseEntity(HttpSession session) throws IOException {
