@@ -43,7 +43,7 @@ import com.czy.interceptor.MyHandlerInterceptor;
 
 @ComponentScan("com.czy")
 @EnableAspectJAutoProxy()
-// 测试web时加上
+// 测试web时加上，@EnableWebMvc会导入DelegatingWebMvcConfiguration类，此类会配置需要web需要的bean，比如
 @EnableWebMvc
 @MapperScan("com.czy.mapper")
 // @MyScan("com.czy.mapper") 测试模拟mybatis时用
