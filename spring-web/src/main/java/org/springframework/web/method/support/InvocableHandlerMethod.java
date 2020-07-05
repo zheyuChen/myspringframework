@@ -135,6 +135,7 @@ public class InvocableHandlerMethod extends HandlerMethod {
     public Object invokeForRequest(NativeWebRequest request, @Nullable ModelAndViewContainer mavContainer,
         Object... providedArgs) throws Exception {
 
+        /* 重点，此方法得到要执行的目标方法的参数列表值 */
         Object[] args = getMethodArgumentValues(request, mavContainer, providedArgs);
         if (logger.isTraceEnabled()) {
             logger.trace("Arguments: " + Arrays.toString(args));

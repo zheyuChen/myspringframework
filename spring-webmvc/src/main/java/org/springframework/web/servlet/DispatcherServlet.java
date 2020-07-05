@@ -493,14 +493,25 @@ public class DispatcherServlet extends FrameworkServlet {
      * May be overridden in subclasses in order to initialize further strategy objects.
      */
     protected void initStrategies(ApplicationContext context) {
+        /* 在收到容器初始化完成事件后，对web相关进行初始化策略 */
+
+        /* 初始化上传文件解析器  StandardServletMultipartResolver */
         initMultipartResolver(context);
+        /* 初始化国际化解析器 SessionLocaleResolver */
         initLocaleResolver(context);
+        /* 初始化主题解析器 null  默认为FixedThemeResolver */
         initThemeResolver(context);
+        /* 初始化映射处理器  RequestMappingHandlerMapping BeanNameUrlHandlerMapping RouterFunctionMapping SimpleUrlHandlerMapping */
         initHandlerMappings(context);
+        /* 初始化处理适配器 RequestMappingHandlerAdapter HandlerFunctionAdapter HttpRequestHandlerAdapter SimpleControllerHandlerAdapter */
         initHandlerAdapters(context);
+        /* 初始化异常处理解析器 HandlerExceptionResolverComposite SimpleMappingExceptionResolver */
         initHandlerExceptionResolvers(context);
+        /* 初始化请求到视图名称的翻译器 null 默认为DefaultRequestToViewNameTranslator */
         initRequestToViewNameTranslator(context);
+        /* 初始化视图解析器，ViewResolverComposite BeanNameViewResolver ThymeleafViewResolver */
         initViewResolvers(context);
+        /* 初始化恢复和保存FlashMap实例策略  null */
         initFlashMapManager(context);
     }
 
@@ -1014,7 +1025,8 @@ public class DispatcherServlet extends FrameworkServlet {
                 /* 获取要处理当前请求的controller，声明controller的方式有两种
                 * 1.加@controller注解，RequestMappingHandlerMapping这个handleMapping就处理这种情况
                 * 2.实现controller接口或者HttpRequestHandler接口，然后把加@component注解或者xml方式交给spring容器，value值就是要拦截的请求路径
-                * BeanNameUrlHandlerMapping这个handleMapping就处理这种情况 */
+                * BeanNameUrlHandlerMapping这个handleMapping就处理这种情况
+                * 获取要处理当前请求的handler（包含拦截器），形成处理器链 */
                 mappedHandler = getHandler(processedRequest);
                 if (mappedHandler == null) {
                     noHandlerFound(processedRequest, response);
@@ -1035,6 +1047,7 @@ public class DispatcherServlet extends FrameworkServlet {
                     }
                 }
 
+                /* 在方法之前调用已经注册的拦截器处理 */
                 if (!mappedHandler.applyPreHandle(processedRequest, response)) {
                     return;
                 }
@@ -1233,6 +1246,7 @@ public class DispatcherServlet extends FrameworkServlet {
     protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception {
         if (this.handlerMappings != null) {
             for (HandlerMapping mapping : this.handlerMappings) {
+                /* 根据可用的映射处理器得到请求的处理器链 */
                 HandlerExecutionChain handler = mapping.getHandler(request);
                 if (handler != null) {
                     return handler;
