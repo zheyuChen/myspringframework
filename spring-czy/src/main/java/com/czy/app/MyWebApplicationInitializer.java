@@ -9,6 +9,8 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import com.czy.service.PersonService;
+
 /**
  * 替代了传统的springmvc配置文件 1.web.xml（tomcat启动时加载） contextloadlistener,传入applicationContext.xml 初始化化spring环境；注册一个servet拦截请求
  * 2.applicationContext.xml 扫描业务类 3.springmvc.xml 扫描controller javaconfig技术实现依赖于servlet3.0以后新增的规范，SPI机制 springweb
@@ -30,7 +32,11 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
         // AppConfig类中的@ComponentScan("com.czy")替代了applicationContext.xml的扫描业务类作用
         // AppConfig类中的@ComponentScan("com.czy")同时也替代了pringmvc.xml的扫描controller作用
         ac.register(AppConfig.class);
+        /* 第一种写法，注释掉ac.refresh()，spring容器初始化交给servletContext，在后续的tomcat生命周期执行阶段初始化 */
         // ac.refresh();
+        /* 第二种写法，在spring容器初始化时，把web上下文传入，否则报错，No ServletContext set，提前进行初始化 */
+        ac.setServletContext(servletContext);
+        ac.refresh();
 
         // Create and register the DispatcherServlet
         /* 替代了web.xml中的注册一个servlet拦截请求作用 */
@@ -39,5 +45,7 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
         registration.setMultipartConfig(new MultipartConfigElement(""));
         registration.setLoadOnStartup(1);
         registration.addMapping("/*");
+
+        ac.getBean(PersonService.class).getService();
     }
 }
