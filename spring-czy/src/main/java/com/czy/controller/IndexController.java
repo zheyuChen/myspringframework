@@ -113,4 +113,9 @@ public class IndexController {
     public String hello() {
         return "Hello World";
     }
+
+    @RequestMapping("/helloHtml")
+    public String helloHtml() {
+        return "hello";
+    }
 }
