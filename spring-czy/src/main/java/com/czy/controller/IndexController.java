@@ -14,6 +14,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
@@ -115,7 +116,10 @@ public class IndexController {
     }
 
     @RequestMapping("/helloHtml")
-    public String helloHtml() {
+    public String helloHtml(Model model) {
+        model.addAttribute("name", "czy");
+        model.addAttribute("password", "123456");
+        model.addAttribute("sex", "1");
         return "hello";
     }
 }
