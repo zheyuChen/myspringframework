@@ -230,9 +230,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
             * 调用getObject工厂方法获取真正的bean实例，如果用户想获取factoryBean本身，这里也不会做特别的处理，直接返回即可
             * 毕竟factoryBean的实现本身也是一种bean，只不过具有一点特殊的功能而已 */
             bean = getObjectForBeanInstance(sharedInstance, name, beanName, null);
-        }
-
-        else {
+        } else {
             // Fail if we're already creating this bean instance:
             // We're assumably within a circular reference.
             /* 如果是原型，则不应该在初始化时创建 */
@@ -300,9 +298,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
                         }
                     });
                     bean = getObjectForBeanInstance(sharedInstance, name, beanName, mbd);
-                }
-
-                else if (mbd.isPrototype()) {
+                } else if (mbd.isPrototype()) {
                     // It's a prototype -> create a new instance.
                     Object prototypeInstance = null;
                     try {
@@ -312,9 +308,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
                         afterPrototypeCreation(beanName);
                     }
                     bean = getObjectForBeanInstance(prototypeInstance, name, beanName, mbd);
-                }
-
-                else {
+                } else {
                     String scopeName = mbd.getScope();
                     final Scope scope = this.scopes.get(scopeName);
                     if (scope == null) {
