@@ -1805,7 +1805,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         }
 
         try {
-            /* 执行InitializingBean 初始化（总结实例化和初始化，初始化包括new对象、属性赋值等，然后还会对这个对象进行init方法回调、aop等，这整个过程才叫实例化） */
+            /* 执行InitializingBean 初始化（初始化包括new对象、属性赋值等，然后还会对这个对象进行init方法回调、aop等） */
             invokeInitMethods(beanName, wrappedBean, mbd);
         } catch (Throwable ex) {
             throw new BeanCreationException((mbd != null ? mbd.getResourceDescription() : null), beanName,
