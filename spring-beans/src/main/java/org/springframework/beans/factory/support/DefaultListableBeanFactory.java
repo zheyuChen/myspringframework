@@ -74,6 +74,7 @@ import org.springframework.util.*;
  * @see #getBean
  * @see #resolveDependency
  */
+/* 整个 Spring IoC 容器的始祖 */
 @SuppressWarnings("serial")
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory
     implements ConfigurableListableBeanFactory, BeanDefinitionRegistry, Serializable {
@@ -907,6 +908,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
         } else {
             if (hasBeanCreationStarted()) {
                 // Cannot modify startup-time collection elements anymore (for stable iteration)
+                /* 如果项目已经运行，由于 beanDefinitionMap 是一个全局变量，可能存在并发问题，所以要加锁处理 */
                 synchronized (this.beanDefinitionMap) {
                     this.beanDefinitionMap.put(beanName, beanDefinition);
                     List<String> updatedDefinitions = new ArrayList<>(this.beanDefinitionNames.size() + 1);

@@ -72,6 +72,7 @@ import org.springframework.util.ReflectionUtils.MethodCallback;
  * @see DefaultListableBeanFactory
  * @see BeanDefinitionRegistry
  */
+/* 该类继承自 AbstractBeanFactory 并对 AutowireCapableBeanFactory 接口中定义的方法进行了落地实现 */
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory
     implements AutowireCapableBeanFactory {
 

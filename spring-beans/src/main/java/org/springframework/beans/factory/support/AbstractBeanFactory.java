@@ -62,6 +62,8 @@ import org.springframework.util.*;
  * @see AbstractAutowireCapableBeanFactory#createBean
  * @see DefaultListableBeanFactory#getBeanDefinition
  */
+/* 实现了 ConfigurableBeanFactory 接口并继承自 FactoryBeanRegistrySupport，
+* 在 AbstractBeanFactory 中对 ConfigurableBeanFactory 中定义的方法进行了实现 */
 public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport implements ConfigurableBeanFactory {
 
     /** Parent bean factory, for bean inheritance support. */

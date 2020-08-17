@@ -51,6 +51,7 @@ import org.springframework.util.StringUtils;
  * @see org.springframework.beans.factory.DisposableBean
  * @see org.springframework.beans.factory.config.ConfigurableBeanFactory
  */
+/* 这个类基于 Java 中的集合，对 SingletonBeanRegistry 接口进行了实现 */
 public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements SingletonBeanRegistry {
 
     /** Cache of singleton objects: bean name to bean instance. */
