@@ -633,10 +633,12 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
     protected void prepareBeanFactory(ConfigurableListableBeanFactory beanFactory) {
         // Tell the internal bean factory to use the context's class loader etc.
         beanFactory.setBeanClassLoader(getClassLoader());
+        /* 添加一个bean表达式解释器，能够让beanFactory去解析bean表达式 */
         beanFactory.setBeanExpressionResolver(new StandardBeanExpressionResolver(beanFactory.getBeanClassLoader()));
         beanFactory.addPropertyEditorRegistrar(new ResourceEditorRegistrar(this, getEnvironment()));
 
         // Configure the bean factory with context callbacks.
+        /* 添加一个后置处理器，ApplicationContextAwareProcessor能够在bean中获得各种*Aware(*Aware都有其作用) */
         beanFactory.addBeanPostProcessor(new ApplicationContextAwareProcessor(this));
         beanFactory.ignoreDependencyInterface(EnvironmentAware.class);
         beanFactory.ignoreDependencyInterface(EmbeddedValueResolverAware.class);
