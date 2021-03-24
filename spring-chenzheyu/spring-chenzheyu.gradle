@@ -1,0 +1,21 @@
+description = "Spring Chenzheyu"
+
+dependencies {
+    compile(project(":spring-context"))
+    compile(project(":spring-aop"))
+    compile(project(":spring-web"))
+    compile(project(":spring-webmvc"))
+    compile(project(":spring-tx"))
+    compile(project(":spring-jdbc"))
+    compile("org.aspectj:aspectjrt:1.8.5")
+    compile("org.aspectj:aspectjweaver:1.8.5")
+    compile("org.apache.tomcat.embed:tomcat-embed-core:8.5.33")
+    compile("com.alibaba:fastjson:1.2.30")
+    compile("org.mybatis:mybatis:3.5.0")
+    compile("org.mybatis:mybatis-spring:2.0.0")
+    compile("mysql:mysql-connector-java:5.1.25")
+    compile("org.thymeleaf:thymeleaf:3.0.10.RELEASE")
+    compile("org.thymeleaf:thymeleaf-spring5:3.0.10.RELEASE")
+    compile("redis.clients:jedis:3.1.0")
+    optional("javax.servlet:javax.servlet-api:3.1.0")
+}
