@@ -120,10 +120,11 @@ abstract class ConfigurationClassUtils {
 
         Map<String, Object> config = metadata.getAnnotationAttributes(Configuration.class.getName());
         if (config != null && !Boolean.FALSE.equals(config.get("proxyBeanMethods"))) {
+            /* 加了@Configuration注解，full场景 认为是全注解类 */
             beanDef.setAttribute(CONFIGURATION_CLASS_ATTRIBUTE, CONFIGURATION_CLASS_FULL);
         } else if (config != null || isConfigurationCandidate(metadata)) {
-            /* 判断是否是Configuration类，如果加了@Configuration下面的这几个注解才处理
-            * @ComponentScan @Import @ImportResource */
+            /* 判断是否是Configuration类，如果没有@Configuration才看是否有下面的这几个注解
+            * @Component @ComponentScan @Import @ImportResource lite场景 认为是部分注解类 */
             beanDef.setAttribute(CONFIGURATION_CLASS_ATTRIBUTE, CONFIGURATION_CLASS_LITE);
         } else {
             return false;

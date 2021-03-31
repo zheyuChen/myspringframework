@@ -254,7 +254,13 @@ public class ConfigurationClassPostProcessor implements BeanDefinitionRegistryPo
      */
     public void processConfigBeanDefinitions(BeanDefinitionRegistry registry) {
         List<BeanDefinitionHolder> configCandidates = new ArrayList<>();
-        /* 获取候选的beanDefinition名称 */
+        /* 获取候选的beanDefinition名称
+        * 0 = "org.springframework.context.annotation.internalConfigurationAnnotationProcessor" --- ConfigurationClassPostProcessor 
+        * 1 = "org.springframework.context.annotation.internalAutowiredAnnotationProcessor" --- AutowiredAnnotationBeanPostProcessor
+        * 2 = "org.springframework.context.annotation.internalCommonAnnotationProcessor" --- CommonAnnotationBeanPostProcessor
+        * 3 = "org.springframework.context.event.internalEventListenerProcessor" --- EventListenerMethodProcessor
+        * 4 = "org.springframework.context.event.internalEventListenerFactory" --- DefaultEventListenerFactory
+        * 5 = "appConfig" */
         String[] candidateNames = registry.getBeanDefinitionNames();
 
         for (String beanName : candidateNames) {
@@ -299,9 +305,12 @@ public class ConfigurationClassPostProcessor implements BeanDefinitionRegistryPo
         }
 
         // Parse each @Configuration class
+        /* 实例化ConfigurationClassParser，为了解析各个配置类 */
         ConfigurationClassParser parser = new ConfigurationClassParser(this.metadataReaderFactory, this.problemReporter,
             this.environment, this.resourceLoader, this.componentScanBeanNameGenerator, registry);
 
+        /* 实例化2个set，candidates用于将之前加入的configCandidates进行去重，因为可能有多个配置类重复了，尤其是
+        * 程序员自己注册多个重复的类，会干扰。alreadyParsed用于判断是否处理过 */
         Set<BeanDefinitionHolder> candidates = new LinkedHashSet<>(configCandidates);
         Set<ConfigurationClass> alreadyParsed = new HashSet<>(configCandidates.size());
         do {
